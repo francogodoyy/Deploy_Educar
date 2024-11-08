@@ -8,8 +8,6 @@ try {
       user: 'root',
       password: '1234',
       database: 'bdeducar',
-
-    
     });
 } catch (err) {
     console.log(err);

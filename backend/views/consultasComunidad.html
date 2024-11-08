@@ -198,7 +198,20 @@
         data.forEach(alumno => {
             const row = document.createElement('tr');
             const columns = ['id', 'nombre_alumno', 'edad', 'fecha_nacimiento', 'nombre_tutor', 'telefono_tutor', 'email', 'taller_titulo', 'taller_fecha', 'estado'];
+<<<<<<< HEAD
             row.innerHTML = columns.map(col => `<td>${alumno[col]}</td>`).join('');
+=======
+            row.innerHTML = columns.map(col => {
+            let value = alumno[col];
+            
+            // Verificar si la columna es una fecha y formatearla
+            if (col === 'fecha_nacimiento' || col === 'taller_fecha') {
+                value = new Date(value).toISOString().split('T')[0]; // Formato YYYY-MM-DD
+            }
+            
+            return `<td>${value}</td>`;
+        }).join('');
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
             
             // Agregar botón de cancelar
             const actionsCell = document.createElement('td');

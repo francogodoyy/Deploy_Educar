@@ -196,6 +196,7 @@
         function updateTable(data) {
             resultTable.innerHTML = '';
             data.forEach((escuela) => {
+<<<<<<< HEAD
                 const row = resultTable.insertRow();
                 row.innerHTML = `
                     <td>${escuela.id}</td>
@@ -215,6 +216,34 @@
                 `;
             });
         }
+=======
+            const row = resultTable.insertRow();
+        
+        // Columnas de los atributos de las escuelas
+            const columns = [
+            'id', 'nombre_escuela', 'localidad_escuela', 'nombre_director',
+            'grado_escuela', 'turno', 'cantidad_alumnos', 'telefono', 'email', 
+            'fecha', 'horario', 'cue', 'estado'
+            ];
+        
+            let rowData = columns.map(col => {
+            let value = escuela[col];
+            
+            // ve si la columna es una fecha y la formatea
+            if (col === 'fecha') {
+                value = new Date(value).toISOString().split('T')[0]; // Formato Default YYYY-MM-DD
+            }
+            
+            return `<td>${value}</td>`;
+        }).join('');
+
+        // se inserta la fecha formateada al rowData
+        row.innerHTML = rowData + `
+            <td><button class="btn btn-danger cancel-button" onclick="cancelTurno(${escuela.id})">Cancelar</button></td>
+        `;
+    });
+}
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
 
         function filterSchools() {
             const searchInput = document.getElementById('nombreInput').value.toLowerCase();
@@ -231,19 +260,32 @@
 
         async function cancelTurno(id) {
             try {
+<<<<<<< HEAD
                 const response = await fetch(`/cancelar_inscripcion_comunidad/${id}`, {
                     method: 'PATCH',
+=======
+                const response = await fetch(`/cancelar_turno/${id}`, {
+                    method: 'PUT',
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({ estado: 'CANCELADO' })
                 });
                 if (response.ok) {
+<<<<<<< HEAD
+=======
+                    alert("El turno ha sido cancelado con éxito.");  // Mostrar alerta de éxito
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
                     loadAllSchools();
                 } else {
                     throw new Error('Error al cancelar la inscripción');
                 }
             } catch (error) {
+<<<<<<< HEAD
+=======
+                alert("Error al cancelar el turno: " + error.message);  // Mostrar alerta de error
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
                 console.error('Error al cancelar el turno:', error);
             }
         }

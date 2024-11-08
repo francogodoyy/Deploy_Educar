@@ -156,7 +156,11 @@ function loadTalleres() {
                 <div class="container">
                      <div class="text-section">
                          <h3>CENTRO EDUCATIVO TECNOLOGICO</h3>
+<<<<<<< HEAD
                          <h4>EDUC.AR LAB</h4>
+=======
+                         <h4>CONECTAR LAB CHACO</h4>
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
                         <p>Sistema de turnos, recorrido virtual<br />e información institucional</p>
                         <button onclick="location.href='/frontend/dist/turnos.html'">MAS INFORMACION</button>
                 </div>

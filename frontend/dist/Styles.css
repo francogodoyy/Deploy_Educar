@@ -347,8 +347,16 @@ img, svg {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+<<<<<<< HEAD
     display: block;
     margin: auto;
+=======
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    background-color: #007bff; /* Color de fondo del botón */
+
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
 }
 
 .solicitud-turno:hover {
@@ -438,6 +446,7 @@ img, svg {
 
 
 /*CARRUSEL LABORATORIO*/
+<<<<<<< HEAD
 .lab-section{
     margin: 40px;
     padding: 10px 5px; 
@@ -462,6 +471,19 @@ img, svg {
     align-items: center;
     text-align: center;
     width: 90%;
+=======
+.lab-section {
+    margin: 20px auto; /* Reduce el margen para ahorrar espacio vertical */
+    padding: 10px 5px;
+    font-family: 'Kubic', sans-serif;
+    max-width: 85%; /* Limita el ancho total */
+    max-height: 100%; /* Limita la altura total para que quepa en pantalla */
+}
+
+.carousel-lab {
+    position: relative;
+    max-height: 80vh; /* Limita la altura del carrusel */
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
 }
 
 .carousel-lab .card-img-top {
@@ -470,6 +492,21 @@ img, svg {
     justify-content: center;
     align-items: center;
     height: 80%;
+<<<<<<< HEAD
+=======
+    border-radius: 15px;
+    transition: transform 0.3s;
+    padding: 0;
+    margin: 5px auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: auto; 
+    max-height: 100%; 
+    object-fit: cover;
+>>>>>>> 5bb75ed690e2908f2b48a8c55408251115b8f3e2
 }
 
 /*

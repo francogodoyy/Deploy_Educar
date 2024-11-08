@@ -196,25 +196,32 @@
         function updateTable(data) {
             resultTable.innerHTML = '';
             data.forEach((escuela) => {
-                const row = resultTable.insertRow();
-                row.innerHTML = `
-                    <td>${escuela.id}</td>
-                    <td>${escuela.nombre_escuela}</td>
-                    <td>${escuela.localidad_escuela}</td>
-                    <td>${escuela.nombre_director}</td>
-                    <td>${escuela.grado_escuela}</td>
-                    <td>${escuela.turno}</td>
-                    <td>${escuela.cantidad_alumnos}</td>
-                    <td>${escuela.telefono}</td>
-                    <td>${escuela.email}</td>
-                    <td>${escuela.fecha}</td>
-                    <td>${escuela.horario}</td>
-                    <td>${escuela.cue}</td>
-                    <td>${escuela.estado}</td>
-                    <td><button class="btn btn-danger cancel-button" onclick="cancelTurno(${escuela.id})">Cancelar</button></td>
-                `;
-            });
-        }
+            const row = resultTable.insertRow();
+        
+        // Columnas de los atributos de las escuelas
+            const columns = [
+            'id', 'nombre_escuela', 'localidad_escuela', 'nombre_director',
+            'grado_escuela', 'turno', 'cantidad_alumnos', 'telefono', 'email', 
+            'fecha', 'horario', 'cue', 'estado'
+            ];
+        
+            let rowData = columns.map(col => {
+            let value = escuela[col];
+            
+            // ve si la columna es una fecha y la formatea
+            if (col === 'fecha') {
+                value = new Date(value).toISOString().split('T')[0]; // Formato Default YYYY-MM-DD
+            }
+            
+            return `<td>${value}</td>`;
+        }).join('');
+
+        // se inserta la fecha formateada al rowData
+        row.innerHTML = rowData + `
+            <td><button class="btn btn-danger cancel-button" onclick="cancelTurno(${escuela.id})">Cancelar</button></td>
+        `;
+    });
+}
 
         function filterSchools() {
             const searchInput = document.getElementById('nombreInput').value.toLowerCase();
@@ -239,11 +246,13 @@
                     body: JSON.stringify({ estado: 'CANCELADO' })
                 });
                 if (response.ok) {
+                    alert("El turno ha sido cancelado con éxito.");  // Mostrar alerta de éxito
                     loadAllSchools();
                 } else {
                     throw new Error('Error al cancelar la inscripción');
                 }
             } catch (error) {
+                alert("Error al cancelar el turno: " + error.message);  // Mostrar alerta de error
                 console.error('Error al cancelar el turno:', error);
             }
         }

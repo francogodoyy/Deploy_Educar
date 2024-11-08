@@ -1,0 +1,12 @@
+body{
+  font-family: 'Kubic', sans-serif;
+}
+.AppDiv {
+    text-align: center;
+  }
+  
+  .AppDiv .MuiButton-root {
+    margin: 5px;
+  }
+
+  

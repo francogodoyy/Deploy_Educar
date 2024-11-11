@@ -34,6 +34,8 @@ const EducacionForm = () => {
         fetchCueData();
     }, []);
 
+
+    //window.open("https://drive.google.com/u/1/uc?id=1kRPn2BSMYBTP4L4YOMi-SRUSlx5TRaD4&export=download", "_blank")
     const handleDescarga = ()=>{
       const link = document.createElement("a");
       link.href = "/public/AUTORIZACION DE USO Y CESIÓN DE IMAGEN Y VOZ DE MENORES- ConectarLAB Chaco.docx";
@@ -346,7 +348,7 @@ const EducacionForm = () => {
               </Grid>
             )}
             
-            <Grid item xs={12} alignItems="center">
+            <Grid item xs={12} alignItems="center" sx={{mt:1}}>
               <FormControlLabel 
                 control={<Checkbox required />} 
                 label="Acepto los términos y condiciones de uso" 

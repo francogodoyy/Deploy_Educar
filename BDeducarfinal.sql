@@ -1,4 +1,3 @@
--- Active: 1715793465876@@127.0.0.1@3306@bdeducar
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
 -- Versión del servidor:         11.4.2-MariaDB - mariadb.org binary distribution
@@ -3107,21 +3106,24 @@ CREATE TABLE IF NOT EXISTS `escuelas` (
   `cue` int(15) NOT NULL,
   `estado` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla conectarlab.escuelas: ~10 rows (aproximadamente)
+-- Volcando datos para la tabla conectarlab.escuelas: ~14 rows (aproximadamente)
 INSERT INTO `escuelas` (`id`, `nombre_escuela`, `localidad_escuela`, `nombre_director`, `grado_escuela`, `turno`, `cantidad_alumnos`, `telefono`, `email`, `fecha`, `horario`, `cue`, `estado`) VALUES
-	(33, 'E.E.P. Nº 50 - MARCIANO LUIS OJEDA', 'RESISTENCIA', 'awefawef', 'awefawefawef', 'Mañana', 22, '3243242342', 'waefawefaw@gmail.com', '2024-10-18', 'Mañana 1', 220000200, 'ACTIVADO'),
-	(34, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'waefwaef', 'waefawef', 'Tarde', 24, '2342342342', 'wadawdwad@gmail.com', '2024-10-18', 'Mañana 2', 220000501, 'ACTIVADO'),
-	(35, 'U.E.G.P. Nº 1 (UEP 1) INSTITUTO EDUCATIVO PRIVADO', 'RESISTENCIA', 'waefwaefwaef', 'waefwaefwaef', 'Mañana', 24, '3242342424', 'awefawefwaef@gmail.com', '2024-10-18', 'Tarde 1', 220000400, 'ACTIVADO'),
-	(36, 'E.P.A Nº 2', 'BARRANQUERAS', 'waefwaefwaef', 'awefwaef', 'Mañana', 24, '3242423424', 'waefwaefwaef@gmail.com', '2024-10-18', 'Tarde 2', 220001000, 'ACTIVADO'),
-	(37, 'JARDIN DE INFANTES Nº 45 - MAESTRA SARA MARINO', 'RESISTENCIA', 'awdawdawd', 'wadawdawd', 'Mañana', 24, '342432424', 'awefawef@gmail.com', '2024-10-30', 'Mañana 1', 220000300, 'ACTIVADO'),
-	(38, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'wafeawef', 'awef', 'Mañana', 23, '324234242', 'waefawef@gmail.com', '2024-10-23', 'Mañana 1', 220000501, 'ACTIVADO'),
+	(33, 'E.E.P. Nº 50 - MARCIANO LUIS OJEDA', 'RESISTENCIA', 'awefawef', 'awefawefawef', 'Mañana', 22, '3243242342', 'waefawefaw@gmail.com', '2024-10-18', 'Mañana 1', 220000200, 'CANCELADO'),
+	(34, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'waefwaef', 'waefawef', 'Tarde', 24, '2342342342', 'wadawdwad@gmail.com', '2024-10-18', 'Mañana 2', 220000501, 'CANCELADO'),
+	(35, 'U.E.G.P. Nº 1 (UEP 1) INSTITUTO EDUCATIVO PRIVADO', 'RESISTENCIA', 'waefwaefwaef', 'waefwaefwaef', 'Mañana', 24, '3242342424', 'awefawefwaef@gmail.com', '2024-10-18', 'Tarde 1', 220000400, 'CANCELADO'),
+	(36, 'E.P.A Nº 2', 'BARRANQUERAS', 'waefwaefwaef', 'awefwaef', 'Mañana', 24, '3242423424', 'waefwaefwaef@gmail.com', '2024-11-21', 'Tarde 2', 220001000, 'CANCELADO'),
+	(37, 'JARDIN DE INFANTES Nº 45 - MAESTRA SARA MARINO', 'RESISTENCIA', 'awdawdawd', 'wadawdawd', 'Mañana', 24, '342432424', 'awefawef@gmail.com', '2024-10-30', 'Mañana 1', 220000300, 'CANCELADO'),
+	(38, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'wafeawef', 'awef', 'Mañana', 23, '324234242', 'waefawef@gmail.com', '2024-10-23', 'Mañana 1', 220000501, 'CANCELADO'),
 	(39, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'awefwaef', 'awefwaef', 'Mañana', 22, '23423423', 'asdaojdio@gmail.com', '2024-10-24', 'Mañana 2', 220000501, 'ACTIVADO'),
-	(40, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'awefwaefawef', 'awefawefwa', 'Tarde', 23, '234234234', 'awfwagagw@gmail.com', '2024-10-24', 'Mañana 1', 220000500, 'ACTIVADO'),
-	(41, 'E.E.P. Nº 50 - MARCIANO LUIS OJEDA', 'RESISTENCIA', 'awdawdaw', 'wadfawdawd', 'Tarde', 23, '2345242423', 'wadawfawfaw@gmail.com', '2024-10-24', 'Tarde 1', 220000200, 'ACTIVADO'),
-	(42, 'U.E.G.P. Nº 1 (UEP 1) INSTITUTO EDUCATIVO PRIVADO', 'RESISTENCIA', 'awdawdawd', 'wadawdaw', 'Mañana', 23, '234234242', 'waefwaefwaef@gmail.com', '2024-10-30', 'Tarde 1', 220000400, 'ACTIVADO'),
-	(43, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'awefawef', 'waefwaef', 'Mañana', 22, '2342342342', 'aewfawefwaf@gmail.com', '2024-10-29', 'Mañana 2', 220000505, 'ACTIVADO');
+	(40, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'awefwaefawef', 'awefawefwa', 'Tarde', 23, '234234234', 'awfwagagw@gmail.com', '2024-10-24', 'Mañana 1', 220000500, 'CANCELADO'),
+	(41, 'E.E.P. Nº 50 - MARCIANO LUIS OJEDA', 'RESISTENCIA', 'awdawdaw', 'wadfawdawd', 'Tarde', 23, '2345242423', 'wadawfawfaw@gmail.com', '2024-10-24', 'Tarde 1', 220000200, 'CANCELADO'),
+	(42, 'U.E.G.P. Nº 1 (UEP 1) INSTITUTO EDUCATIVO PRIVADO', 'RESISTENCIA', 'awdawdawd', 'wadawdaw', 'Mañana', 23, '234234242', 'waefwaefwaef@gmail.com', '2024-10-30', 'Tarde 1', 220000400, 'CANCELADO'),
+	(43, 'E.P.A Nº 14 - RAMON DE LAS MERCEDES TISSERA', 'RESISTENCIA', 'awefawef', 'waefwaef', 'Mañana', 22, '2342342342', 'aewfawefwaf@gmail.com', '2024-10-29', 'Mañana 2', 220000505, 'CANCELADO'),
+	(44, 'JARDIN DE INFANTES Nº 84 - ALAS DE LIBERTAD', 'RESISTENCIA', 'julianito', '2do', 'Tarde', 22, '1231231231', 'rafaullucas@gmail.com', '2024-11-21', 'Tarde 1', 220000101, 'CANCELADO'),
+	(45, 'E.E.P. Nº 50 - MARCIANO LUIS OJEDA', 'RESISTENCIA', 'rgsergserg', '2do grado', 'Mañana', 23, '23432424', 'rafaullucas@gmail.com', '2024-11-21', 'Mañana 2', 220000200, 'CANCELADO'),
+	(46, 'JARDIN DE INFANTES Nº 45 - MAESTRA SARA MARINO', 'RESISTENCIA', 'awefawef', 'waefwaefawef', 'Mañana', 23, '12312312312', 'wadlamnwdiomnwa@gmail.com', '2024-11-21', 'Mañana 1', 220000300, 'CANCELADO');
 
 -- Volcando estructura para tabla conectarlab.inscripciones_comunidad
 CREATE TABLE IF NOT EXISTS `inscripciones_comunidad` (
@@ -3135,10 +3137,17 @@ CREATE TABLE IF NOT EXISTS `inscripciones_comunidad` (
   `taller_titulo` varchar(50) NOT NULL,
   `taller_fecha` date NOT NULL,
   `estado` varchar(50) NOT NULL,
+  `taller_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla conectarlab.inscripciones_comunidad: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla conectarlab.inscripciones_comunidad: ~3 rows (aproximadamente)
+INSERT INTO `inscripciones_comunidad` (`id`, `nombre_alumno`, `edad`, `fecha_nacimiento`, `nombre_tutor`, `telefono_tutor`, `email`, `taller_titulo`, `taller_fecha`, `estado`, `taller_id`) VALUES
+	(10, 'wefawef', 12, '2024-11-15', 'weafawef', '2342342', 'waefawfawf@gmail.com', 'Robotica oijwadoiawjdiowaoi', '2024-11-21', 'ACTIVADO', 6),
+	(11, 'awefwaef', 13, '2024-11-14', 'awefwaef', 'awefwaefaw', 'maiwodmaiodwmoi@gmail.com', 'dwadawdaw', '2024-11-07', 'ACTIVADO', 3),
+	(12, 'awefwaefaw', 12, '2024-11-20', 'awefwaef', '2131231', 'awefgawefawe@gmail.com', 'Robotica oijwadoiawjdiowaoi', '2024-11-21', 'ACTIVADO', 6),
+	(13, 'awefwaef', 23, '2024-11-06', 'awefwaef', '234234242', 'aewfawefwafe@gmail.com', 'taller para probar cupos', '2024-11-29', 'ACTIVADO', 7),
+	(14, 'wfeafewaf', 12, '2024-11-22', 'awefawefwaef', 'awefwaefawef', 'awefawewaef9ij@gmail.com', 'taller para probar cupos', '2024-11-29', 'ACTIVADO', 7);
 
 -- Volcando estructura para tabla conectarlab.inscripciones_docente
 CREATE TABLE IF NOT EXISTS `inscripciones_docente` (
@@ -3151,10 +3160,14 @@ CREATE TABLE IF NOT EXISTS `inscripciones_docente` (
   `taller_titulo` varchar(50) NOT NULL,
   `taller_fecha` date NOT NULL,
   `estado` varchar(50) NOT NULL,
+  `taller_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla conectarlab.inscripciones_docente: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla conectarlab.inscripciones_docente: ~2 rows (aproximadamente)
+INSERT INTO `inscripciones_docente` (`id`, `nombre_docente`, `escuela`, `dni`, `email`, `telefono`, `taller_titulo`, `taller_fecha`, `estado`, `taller_id`) VALUES
+	(7, 'sdfsfsdf', 'eswfsefse', 345345353, 'awdawdawd@gmail.com', '23423424242', 'Capacitacion ciencias', '2024-11-22', 'ACTIVADO', 3),
+	(8, 'fghfghf', 'fghfghf', 32423424, 'awdawdawd@gmail.com', '23424242342', 'nuevo taller', '2024-11-29', 'ACTIVADO', 4);
 
 -- Volcando estructura para tabla conectarlab.talleres_comunidad
 CREATE TABLE IF NOT EXISTS `talleres_comunidad` (
@@ -3164,11 +3177,13 @@ CREATE TABLE IF NOT EXISTS `talleres_comunidad` (
   `fecha` date NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- Volcando datos para la tabla conectarlab.talleres_comunidad: ~2 rows (aproximadamente)
 INSERT INTO `talleres_comunidad` (`id`, `titulo`, `imagen`, `fecha`, `descripcion`) VALUES
-	(1, 'hola jaja', 'NULL', '2024-10-27', 'NULL');
+	(3, 'dwadawdaw', 'https://lh3.googleusercontent.com/d/1GfSi1HmuNcejmQMACq-DOIDzTa3dc_Nj', '2024-11-07', 'weafawefawef'),
+	(6, 'Robotica oijwadoiawjdiowaoi', 'https://lh3.googleusercontent.com/d/1GfSi1HmuNcejmQMACq-DOIDzTa3dc_Nj', '2024-11-21', 'asdasda'),
+	(7, 'taller para probar cupos', 'https://lh3.googleusercontent.com/d/12V1IacS6DDXOxQXD0Y53TCzaD9Jr4AEX', '2024-11-29', 'asdasdasd');
 
 -- Volcando estructura para tabla conectarlab.talleres_docentes
 CREATE TABLE IF NOT EXISTS `talleres_docentes` (
@@ -3178,25 +3193,22 @@ CREATE TABLE IF NOT EXISTS `talleres_docentes` (
   `fecha` date NOT NULL,
   `descripcion` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
--- Volcando datos para la tabla conectarlab.talleres_docentes: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla conectarlab.talleres_docentes: ~2 rows (aproximadamente)
 INSERT INTO `talleres_docentes` (`id`, `titulo`, `imagen`, `fecha`, `descripcion`) VALUES
-	(1, 'awdawd', 'awfawf', '2024-10-09', 'awfawfawf');
+	(4, 'nuevo taller', 'https://lh3.googleusercontent.com/d/1GfSi1HmuNcejmQMACq-DOIDzTa3dc_Nj', '2024-11-29', 'sadad'),
+	(5, 'Capacitacion para docentes', 'https://lh3.googleusercontent.com/d/1GfSi1HmuNcejmQMACq-DOIDzTa3dc_Nj', '2024-11-28', 'awdawdawd');
 
 -- Volcando estructura para tabla conectarlab.users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(2) NOT NULL,
   `email` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
-  `rol` enum('admin','user') NOT NULL DEFAULT 'admin',
+  `role` enum('admin','user') NOT NULL DEFAULT 'admin',
   `created` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
-
-
-
 
 -- Volcando datos para la tabla conectarlab.users: ~0 rows (aproximadamente)
 

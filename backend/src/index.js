@@ -10,10 +10,11 @@ import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url'; //
 import moment from 'moment'; // Para formato de fechas 
+import passport from './apis/passportConfig.js';
 import { Escuela, Horarios, PostTurno, getHorariosOcupados, getFechasOcupadas, getCue } from './apis/formEscuelas.js';
 import { PostTurnoComunidad, getComunidadData,CheckCapacidadTallerComunidad } from './apis/formComunidad.js';
 import { PostTurnoDocente, getDocenteData,CheckCapacidadTallerDocente } from './apis/formDocente.js';
-import users, { verifyToken, verifyAdmin } from '../Routes/Users.js';
+import users from '../Routes/Users.js';
 import DB from './db/conexion.js';
 
 
@@ -27,6 +28,8 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.urlencoded({extended: true, }));
 app.use(cors())
+//Inicializamos passport para progeter las rutas de administradores
+app.use(passport.initialize());
 
 
 
@@ -113,7 +116,7 @@ app.delete('/comentarios/:id', async (req, res) => {
 
 
 // Página de administración de comentarios (Solo para administradores)
-app.get('/adminComentarios', (req, res) => {
+app.get('/adminComentarios', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'adminComentarios.html'));
 });
 
@@ -126,6 +129,8 @@ app.get('/educarlab', (req, res) => {
 app.get('/resetPassword', (req, res) => {
   res.sendFile(path.join(__dirname,'..', 'views', 'resetPassword.html'));
 });
+
+
 
 // Ruta para la página de login
 app.get('/login', (req, res) => {
@@ -140,7 +145,6 @@ app.get('/createAdmin', (req, res) => {
 app.get('/sendResetPasswordEmail', (req, res) => {
   res.sendFile(path.join(__dirname,'..', 'views', 'requestPasswordReset.html'));
 });
-
 
 
 
@@ -245,13 +249,8 @@ app.use(express.json());
 // Configurar el middleware estático correctamente
 app.use(express.static(path.join(__dirname, '../../frontend/public/vistasTaller')));
 
-// Nueva ruta para servir ConectarLab.html
-app.get('/conectarlab', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend/public/ConectarLab.html'));
-});
-
 // Ruta para cargarTalleralumnos.html
-app.get('/alumnos', (req, res) => {
+app.get('/alumnos', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '../views/cargaTalleralumnos.html'));
 });
 
@@ -302,7 +301,7 @@ app.delete('/alumnos/delete/:id', async (req, res) => {
 });
 
 // Ruta para cargarTallerdocentes.html
-app.get('/docentes', (req, res) => {
+app.get('/docentes', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '../views/cargaTallerdocentes.html'));
 });
 
@@ -364,17 +363,17 @@ function convertToLh3Format(driveLink) {
 //FACUNDO VALLEJOS
 
 // Ruta para mostrar el HTML de consultas de escuelas
-app.get('/escuelasConsultas', (req, res) => {
+app.get('/escuelasConsultas', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'escuelasConsultas.html'));
 });
 
 // Ruta para mostrar el HTML de consultas de la comunidad
-app.get('/comunidadConsultas', (req, res) => {
+app.get('/comunidadConsultas', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'comunidadConsultas.html'));
 });
 
 // Ruta para mostrar el HTML de consultas de docentes
-app.get('/docentesConsultas', (req, res) => {
+app.get('/docentesConsultas', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'docentesConsultas.html'));
 });
 // Ruta para obtener datos de comunidad

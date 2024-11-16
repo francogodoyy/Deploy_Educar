@@ -30,7 +30,7 @@ router.post('/comentarios', async (req, res) => {
 });
 
 // Eliminar un comentario (Solo admins)
-router.delete('/comentarios/:id', verifyAdmin, async (req, res) => {
+router.delete('/comentarios/:id', async (req, res) => {
     const { id } = req.params;
 
     try {

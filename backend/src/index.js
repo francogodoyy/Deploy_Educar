@@ -58,6 +58,10 @@ app.get('/get_horarios', (req, res) => {
 //Router de usuarios
 app.use('/users', users);
 
+// Ruta para la página principal
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'EducarLab.html'));  // Tu HTML principal
+});
 
 // Ruta para obtener todos los comentarios
 app.get('/comentarios', async (req, res) => {
@@ -240,7 +244,6 @@ app.get('/api/cue', async (req, res) => {
 
 //Parte de Paniagua (Tema Carga de Talleres(Alumnos y Docentes) y Carrusel Principal )
 // Habilitar CORS para todas las rutas
-app.use(cors());
 
 // Middleware para parsear datos del formulario y JSON
 app.use(express.urlencoded({ extended: false }));
@@ -432,7 +435,7 @@ app.get('/cue/:id_cue', async (req, res) => {
 });
 
 // Ruta para cancelar el turno de escuela
-app.put('/cancelar_turno/:id', async (req, res) => {
+app.put('/cancelar_turno/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
 
     const { id } = req.params; // Extraer id
     try {
@@ -485,7 +488,7 @@ Equipo Educ.ar Lab Chaco`
 
 
 // Ruta para cancelar el turno de docente y enviar correo de cancelación
-app.put('/cancelar_inscripcion/:id', async (req, res) => {
+app.put('/cancelar_inscripcion/:id', passport.authenticate('jwt', { session: false }), async (req, res) => {
     const { id } = req.params;
     try {
         console.log('ID recibido para cancelación:', id);
@@ -638,5 +641,7 @@ app.get('/capacidad-taller-docente/:tallerId', async (req, res) => {
 
 
 
-// Iniciar el servidor en el puerto 3000
-app.listen(3000)
+const port = process.env.PORT || 3000; // Usa el puerto proporcionado por Vercel o 3000 si estás localmente
+app.listen(port, () => {
+    console.log(`Servidor corriendo en el puerto ${port}`);
+});

@@ -34,12 +34,14 @@ app.use(express.urlencoded({extended: true, }));
 //Inicializamos passport para progeter las rutas de administradores
 app.use(passport.initialize());
 
-// Sirve los archivos estáticos del frontend
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
-// Manejar rutas no definidas en el backend para que React gestione el enrutamiento
+// Servir los archivos estáticos en la carpeta dist
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+
+// Asegúrate de que todas las rutas sin coincidencias caigan en tu página principal
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'EducarLab.html'));
+  res.sendFile(path.join(__dirname, 'client/dist/EducarLab.html'));
 });
 
 

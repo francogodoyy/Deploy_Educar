@@ -28,14 +28,19 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.urlencoded({extended: true, }));
 // Configuración de CORS
-app.use(cors({
-  origin: 'https://frontend-zeta-five-16.vercel.app',  // URL de tu frontend desplegado
-  methods: ['GET', 'POST', 'DELETE', 'PUT'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+
+
+
 //Inicializamos passport para progeter las rutas de administradores
 app.use(passport.initialize());
 
+// Sirve los archivos estáticos del frontend
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
+
+// Manejar rutas no definidas en el backend para que React gestione el enrutamiento
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'dist', 'EducarLab.html'));
+});
 
 
 app.use(express.static(path.join(__dirname, '..', 'views')));

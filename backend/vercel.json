@@ -2,22 +2,26 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/src/index.js",
+      "src": "backend/src/index.js",   
       "use": "@vercel/node"
     },
     {
-      "src": "backend/client/dist/**",
+      "src": "backend/client/dist/**",  
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/backend/src/index.js"
+      "dest": "/backend/src/index.js"  
     },
     {
       "src": "/dist/(.*)",
-      "dest": "/backend/client/dist/$1"
+      "dest": "/backend/client/dist/$1" 
+    },
+    {
+      "src": "/",
+      "dest": "/backend/client/dist/EducarLab.html" 
     }
   ]
 }

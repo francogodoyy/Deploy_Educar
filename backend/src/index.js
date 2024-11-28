@@ -28,7 +28,10 @@ const __dirname = path.dirname(__filename);
 app.use(express.json());
 app.use(express.urlencoded({extended: true, }));
 // Configuración de CORS
-
+app.use(cors({
+  origin: ['https://deploy-educar.vercel.app/'],
+  credentials: true
+}));
 
 
 //Inicializamos passport para progeter las rutas de administradores
@@ -40,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 
 
 // Asegúrate de que todas las rutas sin coincidencias caigan en tu página principal
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist/EducarLab.html'));
 });
 
@@ -51,9 +54,9 @@ app.use(express.static(path.join(__dirname, '..', 'views')));
 
 
 // Ruta raíz
-app.get('/', (req, res) => {
+//app.get('/', (req, res) => {
     res.json({ message: "ok" });
-})
+//})
 
 // Ruta para obtener datos de escuela
 app.get('/get', (req, res) => {

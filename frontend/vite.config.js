@@ -1,12 +1,13 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react()],
+  build: {
+    outDir: 'dist', // Carpeta de salida para el build
+  },
   server: {
     proxy: {
-      '/comunidad_data': 'http://localhost:3000', // Asegúrate de que esto apunte a tu backend
-      '/docente_data': 'http://localhost:3000', // Igualmente, para el otro endpoint
+      '/api': 'https://backend-one-alpha-11.vercel.app',  // Proxy a tu backend
     }
   }
-})
+});

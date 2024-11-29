@@ -55,7 +55,7 @@ app.use(express.static(path.join(__dirname, '..', 'views')));
 
 // Ruta raíz
 //app.get('/', (req, res) => {
-    res.json({ message: "ok" });
+    //res.json({ message: "ok" });
 //})
 
 // Ruta para obtener datos de escuela

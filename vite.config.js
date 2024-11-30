@@ -1,13 +1,13 @@
-// vite.config.js
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: './', // Define una base relativa para el proyecto
   build: {
-    outDir: 'dist', // Carpeta de salida para el build
+    outDir: 'dist' // Carpeta de salida para el build
   },
   server: {
     proxy: {
-      '/api': 'https://backend-one-alpha-11.vercel.app',  // Proxy a tu backend
+      '/api': 'https://deploy-educar.vercel.app/', 
     }
   }
 });

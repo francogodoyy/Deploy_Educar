@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "backend/client/public/**",
+      "src": "backend/client/dist/**",
       "use": "@vercel/static"
     }
   ],
@@ -17,11 +17,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/backend/client/public/$1"
+      "dest": "/backend/client/dist/$1"
     },
     {
       "src": "/",
-      "dest": "/backend/client/public/EducarLab.html"
+      "dest": "/backend/client/dist/EducarLab.html"
     }
   ]
 }

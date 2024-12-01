@@ -16,6 +16,50 @@
       "dest": "/backend/src/index.js"
     },
     {
+      "src": "/views/(.*)",
+      "dest": "/backend/views/$1"
+    },
+    {
+      "src": "/login",
+      "dest": "/backend/views/login.html"
+    },
+    {
+      "src": "/register",
+      "dest": "/backend/views/register.html"
+    },
+    {
+      "src": "/adminComentarios",
+      "dest": "/backend/views/adminComentarios.html"
+    },
+    {
+      "src": "/cargaTalleralumnos",
+      "dest": "/backend/views/cargaTalleralumnos.html"
+    },
+    {
+      "src": "/cargaTallerdocentes",
+      "dest": "/backend/views/cargaTallerdocentes.html"
+    },
+    {
+      "src": "/consultasComunidad",
+      "dest": "/backend/views/consultasComunidad.html"
+    },
+    {
+      "src": "/consultasDocentes",
+      "dest": "/backend/views/consultasDocentes.html"
+    },
+    {
+      "src": "/consultasEscuela",
+      "dest": "/backend/views/consultasEscuela.html"
+    },
+    {
+      "src": "/requestPasswordReset",
+      "dest": "/backend/views/requestPasswordReset.html"
+    },
+    {
+      "src": "/resetPassword",
+      "dest": "/backend/views/resetPassword.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/backend/client/dist/$1"
     },

@@ -62,7 +62,7 @@
     {
       "src": "/(.*)",
       "dest": "/backend/client/dist/$1"
-    },
+    },  
     {
       "src": "/",
       "dest": "/backend/client/dist/EducarLab.html"

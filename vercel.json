@@ -20,7 +20,7 @@
       "dest": "/backend/views/$1"
     },
     {
-      "src": "/login",
+      "src": "/api/login",
       "dest": "/backend/views/login.html"
     },
     {

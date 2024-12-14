@@ -70,7 +70,7 @@ app.get('/get_horarios', (req, res) => {
 
 //Parte de Franco Godoy - Login y Comentarios
 //Router de usuarios
-app.use('/api/users', users);
+app.use('/api', users);
 
 
 

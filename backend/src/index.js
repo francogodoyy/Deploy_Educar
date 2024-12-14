@@ -135,10 +135,6 @@ app.get('/adminComentarios', passport.authenticate('jwt', { session: false }), (
   res.sendFile(path.join(__dirname, '..', 'views', 'adminComentarios.html'));
 });
 
-//Servimos la página principal
-app.get('/educarlab', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../../frontend/public/EducarLab.html'));
-});
 
 // Ruta para la página de restablecimiento de contraseña
 app.get('/resetPassword', (req, res) => {

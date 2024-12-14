@@ -10,7 +10,7 @@ import ComunidadForm from './components/ComunidadForm';
 import DocenteForm from './components/DocenteForm';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '/public/estilo.css';
+import '../public/estilo.css';
 import './App.css';
 import axios from 'axios';
 
@@ -25,7 +25,7 @@ function App() {
   async function hayTalleres() {
     try {
       // Petición para obtener datos de la comunidad
-      const comunidadResponse = await axios.get('https://educar-lab.vercel.app/comunidad_data');
+      const comunidadResponse = await axios.get('https://deploy-educar.vercel.app/');
       setComunidadData(comunidadResponse.data);
     } catch (error) {
       console.error('Error al obtener datos de comunidad:', error);
@@ -34,7 +34,7 @@ function App() {
 
     try {
       // Petición para obtener datos de docentes
-      const docenteResponse = await axios.get('https://educar-lab.vercel.app/docente_data');
+      const docenteResponse = await axios.get('https://deploy-educar.vercel.app/');
       setDocenteData(docenteResponse.data);
     } catch (error) {
       console.error('Error al obtener datos de docente:', error);

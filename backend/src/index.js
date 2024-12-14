@@ -29,7 +29,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true, }));
 // Configuración de CORS
 app.use(cors({
-  origin: ['https://deploy-educar.vercel.app/'],
+  origin: ['https://educar-lab.vercel.app'], // Dominios permitidos
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
   credentials: true
 }));
 

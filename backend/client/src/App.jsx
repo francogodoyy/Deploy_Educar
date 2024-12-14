@@ -179,7 +179,7 @@ function App() {
               <ul className="list-unstyled">
                 <li><a href="#pasos">Reservas</a></li>
                 <li><a href="nosotros.html">EducarLab</a></li>
-                <li><a href="#virtual">360</a></li>
+                <li><a href="#virtual">Recorrido</a></li>
                 <li><a href="#Labs">Actividades</a></li>
               </ul>
             </div>
@@ -191,10 +191,10 @@ function App() {
             <div className="row">
               <div className="col-md-12">
                 <div className="logo_container">
-                  <img src="/src/assets/img/logos/Logo Chaco.png" alt="Logo Chaco" />
-                  <img src="/src/assets/img/logos/Logo educar.png" alt="Logo Educar" />
-                  <img src="/src/assets/img/logos/Logo Fontana.png" alt="Logo Fontana" />
-                  <img src="/src/assets/img/logos/Logo Ministerio.png" alt="Logo Ministerio" />
+                  <img src="./img/logos/Logo Chaco.png" alt="Logo Chaco" />
+                  <img src="./img/logos/Logo educar.png" alt="Logo Educar" />
+                  <img src="./img/logos/Logo Fontana.png" alt="Logo Fontana" />
+                  <img src="./img/logos/Logo Ministerio.png" alt="Logo Ministerio" />
                 </div>
               </div>
             </div>

@@ -21,6 +21,8 @@ function App() {
   const [comunidadData, setComunidadData] = useState(null);
   const [docenteData, setDocenteData] = useState(null);
 
+  const API_BASE_URL = 'https://mi-backend.vercel.app';
+
   // Función para verificar si hay talleres disponibles en la comunidad y para docentes
   async function hayTalleres() {
     try {

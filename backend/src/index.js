@@ -27,6 +27,8 @@ const __dirname = path.dirname(__filename);
 // Configuración de la aplicación Express
 app.use(express.json());
 app.use(express.urlencoded({extended: true, }));
+
+
 // Configuración de CORS
 app.use(cors({
   origin: ['https://educar-lab.vercel.app'], // Dominios permitidos

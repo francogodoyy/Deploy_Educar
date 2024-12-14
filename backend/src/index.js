@@ -70,7 +70,7 @@ app.get('/get_horarios', (req, res) => {
 
 //Parte de Franco Godoy - Login y Comentarios
 //Router de usuarios
-app.use('/users', users);
+app.use('/api/users', users);
 
 
 
@@ -144,7 +144,7 @@ app.get('/resetPassword', (req, res) => {
 
 
 // Ruta para la página de login
-app.get('/login', (req, res) => {
+app.get('/api/login', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
 });
 

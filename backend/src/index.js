@@ -43,18 +43,13 @@ app.use(passport.initialize());
 
 // Servir los archivos estáticos en la carpeta dist
 app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, '..', 'views')));
 
 
 // Asegúrate de que todas las rutas sin coincidencias caigan en tu página principal
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist/EducarLab.html'));
 });
-
-
-app.use(express.static(path.join(__dirname, '..', 'views')));
-
-
-
 
 
 
@@ -70,7 +65,7 @@ app.get('/get_horarios', (req, res) => {
 
 //Parte de Franco Godoy - Login y Comentarios
 //Router de usuarios
-app.use('/api', users);
+app.use('/users', users);
 
 
 
@@ -144,7 +139,7 @@ app.get('/resetPassword', (req, res) => {
 
 
 // Ruta para la página de login
-app.get('/api/login', (req, res) => {
+app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'views', 'login.html'));
 });
 
@@ -648,7 +643,7 @@ app.get('/capacidad-taller-docente/:tallerId', async (req, res) => {
 
 
 
-const port = process.env.PORT || 3000; // Usa el puerto proporcionado por Vercel o 3000 si estás localmente
-app.listen(port, () => {
-    console.log(`Servidor corriendo en el puerto ${port}`);
+const PORT = process.env.PORT || 3000; 
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });

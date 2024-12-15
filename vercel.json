@@ -13,59 +13,55 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/educarlab/backend/src/index.js"
-    },
-    {
-      "src": "/views/(.*)",
-      "dest": "/educarlab/backend/views/$1"
+      "dest": "/backend/src/index.js"
     },
     {
       "src": "/login",
-      "dest": "/educarlab/backend/views/login.html"
+      "dest": "/backend/views/login.html"
     },
     {
       "src": "/register",
-      "dest": "/educarlab/backend/views/register.html"
+      "dest": "/backend/views/register.html"
     },
     {
       "src": "/adminComentarios",
-      "dest": "/educarlab/backend/views/adminComentarios.html"
+      "dest": "/backend/views/adminComentarios.html"
     },
     {
       "src": "/cargaTalleralumnos",
-      "dest": "/educarlab/backend/views/cargaTalleralumnos.html"
+      "dest": "/backend/views/cargaTalleralumnos.html"
     },
     {
       "src": "/cargaTallerdocentes",
-      "dest": "/educarlab/backend/views/cargaTallerdocentes.html"
+      "dest": "/backend/views/cargaTallerdocentes.html"
     },
     {
       "src": "/consultasComunidad",
-      "dest": "/educarlab/backend/views/consultasComunidad.html"
+      "dest": "/backend/views/consultasComunidad.html"
     },
     {
       "src": "/consultasDocentes",
-      "dest": "/educarlab/backend/views/consultasDocentes.html"
+      "dest": "/backend/views/consultasDocentes.html"
     },
     {
       "src": "/consultasEscuela",
-      "dest": "/educarlab/backend/views/consultasEscuela.html"
+      "dest": "/backend/views/consultasEscuela.html"
     },
     {
       "src": "/requestPasswordReset",
-      "dest": "/educarlab/backend/views/requestPasswordReset.html"
+      "dest": "/backend/views/requestPasswordReset.html"
     },
     {
       "src": "/resetPassword",
-      "dest": "/educarlab/backend/views/resetPassword.html"
+      "dest": "/backend/views/resetPassword.html"
     },
     {
       "src": "/(.*)",
-      "dest": "/educarlab/backend/client/dist/$1"
-    },  
+      "dest": "/backend/client/dist/$1"
+    },
     {
       "src": "/",
-      "dest": "/educarlab/backend/client/dist/EducarLab.html"
+      "dest": "/backend/client/dist/EducarLab.html"
     }
   ]
 }

@@ -41,14 +41,15 @@ app.use(cors({
 app.use(passport.initialize());
 
 
-// Servir los archivos estáticos en la carpeta dist
-app.use(express.static(path.join(__dirname, 'client/dist')));
-app.use(express.static(path.join(__dirname, '..', 'views')));
+//archivos estáticos desde backend/views
+app.use('/views', express.static(path.join(__dirname, '..', 'views')));
+
+app.use('/', express.static(path.join(__dirname, '..', '..', 'client', 'dist')));
 
 
 // Asegúrate de que todas las rutas sin coincidencias caigan en tu página principal
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist/EducarLab.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', '..', 'client', 'dist', 'EducarLab.html'));
 });
 
 
@@ -65,7 +66,7 @@ app.get('/get_horarios', (req, res) => {
 
 //Parte de Franco Godoy - Login y Comentarios
 //Router de usuarios
-app.use('/users', users);
+app.use('/api/users', users);
 
 
 

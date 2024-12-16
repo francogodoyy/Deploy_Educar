@@ -8,6 +8,10 @@
     {
       "src": "backend/client/dist/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "backend/views/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [

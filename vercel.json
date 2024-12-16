@@ -12,16 +12,20 @@
     {
       "src": "backend/views/**",
       "use": "@vercel/static"
-    },
-    {
-      "src": "backend/views/css/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/backend/src/index.js"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/backend/views/css/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "backend/views/$1"
     },
     {
       "src": "/login",

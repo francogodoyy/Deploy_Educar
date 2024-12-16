@@ -64,7 +64,7 @@
       "dest": "/backend/views/resetPassword.html"
     },
     {
-      "src": "/css/(.*)",
+      "src": "./css/(.*)",
       "dest": "/backend/views/css/$1"
     },
     {

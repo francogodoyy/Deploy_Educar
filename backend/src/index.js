@@ -44,6 +44,7 @@ app.use(passport.initialize());
 //archivos estáticos desde backend/views
 app.use('/views', express.static(path.join(__dirname, '..', 'views')));
 
+
 app.use('/', express.static(path.join(__dirname, '..', '..', 'client', 'dist')));
 
 

@@ -24,10 +24,6 @@
       "dest": "/backend/views/css/$1"
     },
     {
-      "src": "/(.*)",
-      "dest": "backend/views/$1"
-    },
-    {
       "src": "/login",
       "dest": "/backend/views/login.html"
     },

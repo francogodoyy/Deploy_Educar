@@ -12,6 +12,10 @@
     {
       "src": "backend/views/**",
       "use": "@vercel/static"
+    },
+    {
+      "src": "backend/views/css/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -58,6 +62,10 @@
     {
       "src": "/resetPassword",
       "dest": "/backend/views/resetPassword.html"
+    },
+    {
+      "src": "/css/(.*)",
+      "dest": "/backend/views/css/$1"
     },
     {
       "src": "/(.*)",

@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 const pool = require('./db');  // Asegúrate de que apunte al archivo de conexión
-const { verifyAdmin } = require('../Routes/Users/verifyAdmin');  // Middleware para verificar si el usuario es admin
+
 
 // Obtener todos los comentarios
 router.get('/comentarios', async (req, res) => {

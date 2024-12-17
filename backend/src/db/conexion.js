@@ -14,6 +14,7 @@ let DB = null;
       port: process.env.DB_PORT || 3306,
       ssl: {
         rejectUnauthorized: true,
+        ca: process.env.RDS_CA_CERT, // Certificado RDS
       },
     });
 

@@ -27,7 +27,7 @@ function App() {
   async function hayTalleres() {
     try {
       // Petición para obtener datos de la comunidad
-      const comunidadResponse = await axios.get('https://deploy-educar.vercel.app/api/comunidad_data');
+      const comunidadResponse = await axios.get('/api/comunidad_data');
       setComunidadData(comunidadResponse.data);
     } catch (error) {
       console.error('Error al obtener datos de comunidad:', error);
@@ -36,7 +36,7 @@ function App() {
 
     try {
       // Petición para obtener datos de docentes
-      const docenteResponse = await axios.get('https://deploy-educar.vercel.app/api/docente_data');
+      const docenteResponse = await axios.get('/api/docente_data');
       setDocenteData(docenteResponse.data);
     } catch (error) {
       console.error('Error al obtener datos de docente:', error);

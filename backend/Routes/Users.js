@@ -90,7 +90,7 @@ users.post('/sendResetPasswordEmail', async (req, res) => {
         const user = rows[0];
         const token = jwt.sign({ id: user.id, email: user.email }, secretKey, { expiresIn: '15m' });
 
-        const resetLink = `https://mi-sitio.com/resetPassword?token=${token}`;
+        const resetLink = `/api/resetPassword?token=${token}`;
         const mailOptions = {
             from: `No Reply <${emailUser}>`,
             to: email,

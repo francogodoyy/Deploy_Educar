@@ -14,6 +14,8 @@
       "use": "@vercel/static"
     }
   ],
+  
+  
   "routes": [
     {
       "src": "/api/(.*)",
@@ -72,4 +74,6 @@
       "dest": "/backend/client/dist/EducarLab.html"
     }
   ]
+  
 }
+

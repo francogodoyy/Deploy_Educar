@@ -79,8 +79,8 @@
 <section id="barradenavegacion">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="http://localhost:5173/EducarLab.html">
-                <img class="logo" src="images/logo.png" alt="EducarLAB" height="30" />
+            <a class="navbar-brand" href="/educarLab/backend/client/dist/EducarLab.html">
+                <img class="logo" src="educarLab/backend/client/dist/img/logo.png" alt="EducarLAB" height="30" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -102,7 +102,7 @@
 <!-- Main Content -->
 <div class="container">
     <h2>Cargar Taller Comunidad</h2>
-    <form action="http://localhost:3000/alumnos/confirmacion" method="POST" class="mb-4">
+    <form action="/alumnos/confirmacion" method="POST" class="mb-4">
         <div class="mb-3">
             <label for="titulo" class="form-label">Título:</label>
             <input type="text" id="titulo" name="titulo" class="form-control" required>
@@ -151,7 +151,7 @@
 
     async function loadAllTalleresAlumnos() {
         try {
-            const response = await fetch('http://localhost:3000/api/alumnos');
+            const response = await fetch('/api/alumnos');
             if (!response.ok) {
                 throw new Error('No se encontraron resultados');
             }
@@ -183,7 +183,7 @@
     async function cancelTallerAlumnos(id) {
         if (confirm('¿Estás seguro de que deseas eliminar este taller?')) {
             try {
-                const response = await fetch(`http://localhost:3000/alumnos/delete/${id}`, { method: 'DELETE' });
+                const response = await fetch(`/alumnos/delete/${id}`, { method: 'DELETE' });
                 if (response.ok) {
                     alert('Taller eliminado');
                     loadAllTalleresAlumnos();

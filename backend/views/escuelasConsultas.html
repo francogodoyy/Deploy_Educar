@@ -117,7 +117,7 @@
 
         async function loadAllSchools() {
             try {
-                const response = await fetch('http://localhost:3000/escuelas');
+                const response = await fetch('/escuelas');
                 if (!response.ok) {
                     throw new Error('No se encontraron resultados');
                 }
@@ -174,7 +174,7 @@
             if (selectedRow) {
                 const id = selectedRow.cells[0].textContent; // Asegúrate de que esta sea la forma correcta de obtener el ID
                 try {
-                    const response = await fetch(`http://localhost:3000/cancelar_turno/${id}`, {
+                    const response = await fetch(`/cancelar_turno/${id}`, {
                         method: 'PUT'
                     });
                     if (response.ok) {

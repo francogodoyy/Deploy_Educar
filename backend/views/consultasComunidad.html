@@ -79,8 +79,8 @@
 <section id="barradenavegacion">
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="http://localhost:5173/EducarLab.html">
-                <img class="logo" src="images/logo.png" alt="EducarLAB" height="30" />
+            <a class="navbar-brand" href="/educarLab/backend/client/dist/EducarLab.html">
+                <img class="logo" src="educarLab/backend/client/dist/img/logo.png" alt="EducarLAB" height="30" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -173,7 +173,7 @@
     // Función para cargar los datos de inscripciones de alumnos
     async function loadAllAlumnos() {
         try {
-            const response = await fetch('http://localhost:3000/inscripciones_comunidad');
+            const response = await fetch('/inscripciones_comunidad');
             if (!response.ok) {
                 throw new Error('');
             }
@@ -225,7 +225,7 @@
     // Función para enviar solicitud de cancelación de inscripción
     async function cancelarInscripcion(id) {
         try {
-            const response = await fetch(`http://localhost:3000/cancelar_inscripcion_comunidad/${id}`, {
+            const response = await fetch(`/cancelar_inscripcion_comunidad/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' }
             });

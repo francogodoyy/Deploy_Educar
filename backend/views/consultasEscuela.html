@@ -179,7 +179,7 @@
 
         async function loadAllSchools() {
             try {
-                const response = await fetch('http://localhost:3000/escuelas');
+                const response = await fetch('/escuelas');
                 if (!response.ok) {
                     throw new Error('');
                 }

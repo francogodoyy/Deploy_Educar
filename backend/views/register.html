@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="logo-container">
-        <a href="./public/ConectarLab.html"></a>
-        <img src="images/1080x1920 EDUCARLAB Chaco_Gris.png" alt="Logo" class="logo">
+        <a href="/educarLab/backend/client/dist/EducarLab.html"></a>
+        <img src="/images/1080x1920 EDUCARLAB Chaco_Gris.png" alt="Logo" class="logo">
     </div>
 
     <div class="container">
@@ -40,7 +40,7 @@
     
         async function registerUser(email, password) {
             try {
-                const response = await fetch('http://localhost:3000/users/createAdmin', { // Cambia aquí la ruta
+                const response = await fetch('/api/users/createAdmin', { // Cambia aquí la ruta
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

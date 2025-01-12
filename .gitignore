@@ -4,3 +4,4 @@ bdeducar.sql/
 
 .env
 .vercel
+node_modules

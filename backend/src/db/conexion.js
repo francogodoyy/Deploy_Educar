@@ -12,10 +12,6 @@ let DB = null;
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
       port: process.env.DB_PORT || 3306,
-      ssl: {
-        rejectUnauthorized: true,
-        ca: process.env.RDS_CA_CERT, // Certificado RDS
-      },
     });
 
     console.log("Conectado a la base de datos");

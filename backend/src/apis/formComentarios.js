@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-const pool = require('./db');  // Asegúrate de que apunte al archivo de conexión
+const pool = require('./db');  
 
 
 // Obtener todos los comentarios

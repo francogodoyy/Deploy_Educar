@@ -48,7 +48,7 @@ app.use('/views', express.static(path.join(__dirname, '..', 'views')));
 app.use('/', express.static(path.join(__dirname, '..', '..', 'client', 'dist')));
 
 
-// Asegúrate de que todas las rutas sin coincidencias caigan en tu página principal
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '..', '..', 'client', 'dist', 'EducarLab.html'));
 });

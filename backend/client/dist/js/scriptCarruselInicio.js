@@ -125,7 +125,7 @@ let currentSlide = 0;
  */
 function loadTalleres() {
     // Fetch datos de comunidad (alumnos)
-    fetch('https://deploy-educar.vercel.app/api/alumnos')
+    fetch('/api/alumnos')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Error en la red al obtener comunidad');
@@ -134,7 +134,7 @@ function loadTalleres() {
         })
         .then(async dataComunidad => {
             // Fetch datos de docente
-            const response = await fetch('https://deploy-educar.vercel.app/api/docentes');
+            const response = await fetch('/api/docentes');
             if (!response.ok) {
                 throw new Error('Error en la red al obtener docente');
             }
